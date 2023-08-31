@@ -120,6 +120,12 @@ Find information about `renv` here:
 
 https://rstudio.github.io/renv/
 
+I recommend ignoring the current package (the package the `renv` is managing dependencies for) by setting `renv::settings$ignore.packages("your_package_name").
+This can avoid problems where `renv` fails because it tries to find the current package from CRAN or other external source.
+Information on the setting can be found here:
+
+https://rstudio.github.io/renv/reference/settings.html#ignored-packages
+
 ## Testing
 
 ### CRAN Check
