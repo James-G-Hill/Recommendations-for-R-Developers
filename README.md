@@ -65,6 +65,26 @@ The Tidyverse Style Guide serves as a comprehensive foundation for any team codi
 
 https://style.tidyverse.org/
 
+### Referring to Functions from Other Packages
+
+All of the packages linked to functions that are called directly in the code should be listed in the `DESCRIPTION` file.
+The `library` function should almost **never** be called in an R package (excluding in some cases in Rmarkdown documents).
+Those functions should then (nearly) always be called with the following format:
+
+`package_name::function_name`
+
+There are 3 reasons for this:
+
+- It improves comprehension of the code because the function is always called with it's package name next to it
+- There will never be any confusion over 2+ functions with the same name from different packages
+- There is no need to use the `@importFrom` tag in the `roxygen2` documentation
+
+There are some exceptions to the rule:
+
+- Functions from `base` R should just call `function_name` and not `base::function_name`
+- The `.data` pronoun from Tidyverse should always be added with the `@importFrom` tag
+- If a function needs to be optimized for performance then importing functions with `@importFrom` tag is permissible
+
 ### Documentation
 
 Use the `roxygen2` package for documenting your R functions.
