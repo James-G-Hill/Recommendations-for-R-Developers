@@ -1,4 +1,6 @@
-# Introduction
+# Recommendations for R Developers
+
+## Introduction
 
 There are useful standards available for R developers to adopt but unless you have been pointed in their direction it's not necessarily obvious how they fit together.
 This document makes some recommendations to make life easier for R developers who want to make their code more robust.
@@ -8,9 +10,9 @@ I also add some advice based upon my experience.
 The document shouldn't be understand as a set of rules; if any of these standards don't work for you then it's fine to develop your own.
 What's most important is consistency; when working with others and also for your future self.
 
-# Structure
+## Structure
 
-## Package-Based Development
+### Package-Based Development
 
 It's best to structure your code as R packages; they could be:
 
@@ -23,7 +25,7 @@ Hadley Wickham has written about R packages and how to structure them in the boo
 
 https://r-pkgs.org/
 
-### Shiny Apps
+#### Shiny Apps
 
 When writing Shiny applications I recommend using `golem` standards.
 Documentation for the `golem` package can be found here:
@@ -34,7 +36,7 @@ There is far more information on writing Shiny apps with `golem` int he followin
 
 https://engineering-shiny.org/index.html
 
-## RStudio Projects
+### RStudio Projects
 
 If you're using RStudio then you should create a single Project per R package.
 A Project will have a file named identically to the project but with the .Rproj extension.
@@ -43,7 +45,7 @@ Find some details below:
 
 https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects
 
-## Secrets
+### Secrets
 
 Passwords, keys, and other secrets should never be hardcoded into the package & never committed to git.
 A simple way to manage this is to use `.Renviron` files to store your secrets.
@@ -52,18 +54,18 @@ Some information on the `.Renviron` file is included in the link below:
 
 https://support.posit.co/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf
 
-# Readability
+## Readability
 
 There are actions we can take as developers to make our code easier for others & our future selves to read and understand.
 
-## Coding Style
+### Coding Style
 
 Code should be written to a regular format The with easily understandable rules.
 The Tidyverse Style Guide serves as a comprehensive foundation for any team coding style:
 
 https://style.tidyverse.org/
 
-## Documentation
+### Documentation
 
 Use the `roxygen2` package for documenting your R functions.
 This will help ensure your package passes various CRAN checks.
@@ -71,9 +73,9 @@ Documentation can be found here:
 
 https://roxygen2.r-lib.org/ 
 
-# Managing Change
+## Managing Change
 
-## Version Control
+### Version Control
 
 I recommend using git to keep track of the versions of your code.
 It's possible to use a monorepo-style format where many packages are kept in one single git repository.
@@ -84,13 +86,13 @@ If you are using Posit the top right panel contains a tab that assists in runnin
 It's useful for simple commit, revert, pull and push but it's not sufficient for all circumstances.
 Some knowledge of the git command line commands will still be necessary.
 
-## Version Numbers
+### Version Numbers
 
 There is information on how to use version numbers meaningfully in the R Packages book by Hadley Wickham but an outline of Semantic Versioning can be found here:
 
 https://semver.org/
 
-## Package Dependencies
+### Package Dependencies
 
 Use `renv` to manage your dependencies on R packages.
 This allows the use of multiple versions of the same packages across different projects.
@@ -98,9 +100,9 @@ Find information about `renv` here:
 
 https://rstudio.github.io/renv/
 
-# Testing
+## Testing
 
-## CRAN Check
+### CRAN Check
 
 Packages that get uploaded to CRAN have to pass a number of checks before they are permitted.
 These are useful checks to take into consideration even if you are not making your packages public.
@@ -110,7 +112,7 @@ https://r-pkgs.org/R-CMD-check.html
 
 When using an RStudio project to manage your package you can find a button to perform the Check process in the top right panel.
 
-## Data Validation
+### Data Validation
 
 When writing code to transform data you may want to consider adding data validation rules to ensure the output matches your expectations.
 For example, if you wrote an Rmarkdown document that runs on a schedule & updates a file, you could check the transformed data before writing / saving.
@@ -119,13 +121,13 @@ A book explaining how to use the package can be found here:
 
 https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html
 
-## Unit Testing of Functions
+### Unit Testing of Functions
 
 When it comes to unit testing of functions there is the `testthat` package which easily integrates into R packages;
 
 https://testthat.r-lib.org/
 
-## Testing Applications
+### Testing Applications
 
 For testing of shiny applications you may refer to the following documentation of the `shinytest2` package:
 
