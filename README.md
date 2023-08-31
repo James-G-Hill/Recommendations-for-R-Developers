@@ -43,6 +43,15 @@ Find some details below:
 
 https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects
 
+## Secrets
+
+Passwords, keys, and other secrets should never be hardcoded into the package & never committed to git.
+A simple way to manage this is to use `.Renviron` files to store your secrets.
+The `.Renviron` file should also be added to your `.gitignore` file to avoid it being committed.
+Some information on the `.Renviron` file is included in the link below:
+
+https://support.posit.co/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf
+
 # Readability
 
 There are actions we can take as developers to make our code easier for others & our future selves to read and understand.
