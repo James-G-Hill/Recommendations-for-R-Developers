@@ -91,7 +91,15 @@ Use the `roxygen2` package for documenting your R functions.
 This will help ensure your package passes various CRAN checks.
 Documentation can be found here:
 
-https://roxygen2.r-lib.org/ 
+https://roxygen2.r-lib.org/
+
+## Performance
+
+### Use Native Pipes
+
+Since R version 4.1 the native R pipe `|>` has been available.
+If it is possible I would recommend using version 4.1 or higher to take advantage of the new pipe.
+The new pipe has a speed improvement over the `magrittr` pipe `%>%`.
 
 ## Managing Change
 
