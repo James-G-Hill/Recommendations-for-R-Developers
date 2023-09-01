@@ -25,6 +25,10 @@ Hadley Wickham has written about R packages and how to structure them in the boo
 
 https://r-pkgs.org/
 
+Further documentation can be found here:
+
+https://cran.r-project.org/doc/manuals/r-devel/R-exts.html
+
 #### Shiny Apps
 
 When writing Shiny applications I recommend using `golem` standards.
