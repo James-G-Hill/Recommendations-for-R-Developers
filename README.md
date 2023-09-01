@@ -32,14 +32,14 @@ Documentation for the `golem` package can be found here:
 
 https://golemverse.org/packages/golem/
 
-There is far more information on writing Shiny apps with `golem` int he following book:
+There is far more information on writing Shiny apps with `golem` in the following book:
 
 https://engineering-shiny.org/index.html
 
 ### RStudio Projects
 
 If you're using RStudio then you should create a single Project per R package.
-A Project will have a file named identically to the project but with the .Rproj extension.
+A Project will have a file named identically to the project but with the `.Rproj` extension.
 Using this will simplify managing, checking and testing your R package.
 Find some details below:
 
@@ -60,7 +60,7 @@ There are actions we can take as developers to make our code easier for others &
 
 ### Coding Style
 
-Code should be written to a regular format The with easily understandable rules.
+Code should be written to a regular format with easily understandable rules.
 The Tidyverse Style Guide serves as a comprehensive foundation for any team coding style:
 
 https://style.tidyverse.org/
