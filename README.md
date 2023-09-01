@@ -58,6 +58,11 @@ Some information on the `.Renviron` file is included in the link below:
 
 https://support.posit.co/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf
 
+It's possible (and desirable) to have `.Renviron` files in multiple places.
+I recommend having a single `.Renviron` file at the user level to contain personal secrets such as your GitHub PAT.
+Then have project level `.Renviron` files to manage environment variables for the individual packages.
+This will avoid any problems with environment variables names clashing (in the example of the same environment variable being used for different values across 2+ projects).
+
 ## Readability
 
 There are actions we can take as developers to make our code easier for others & our future selves to read and understand.
